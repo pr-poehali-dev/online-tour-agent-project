@@ -30,9 +30,8 @@ const Index = () => {
           <nav className="hidden md:flex gap-6">
             <a href="#about" className="text-foreground hover:text-primary transition-colors">О курсе</a>
             <a href="#program" className="text-foreground hover:text-primary transition-colors">Программа</a>
-            <a href="#teachers" className="text-foreground hover:text-primary transition-colors">Преподаватели</a>
-            <a href="#reviews" className="text-foreground hover:text-primary transition-colors">Отзывы</a>
-            <a href="#faq" className="text-foreground hover:text-primary transition-colors">FAQ</a>
+            <a href="#pricing" className="text-foreground hover:text-primary transition-colors">Тарифы</a>
+            <a href="#success" className="text-foreground hover:text-primary transition-colors">Успехи</a>
             <a href="#contacts" className="text-foreground hover:text-primary transition-colors">Контакты</a>
           </nav>
           <Button asChild>
@@ -41,28 +40,40 @@ const Index = () => {
         </div>
       </header>
 
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://cdn.poehali.dev/projects/fd0eecdc-80c1-48b8-8635-d505979a453e/files/9a3af210-cbaf-4cc0-9c7b-9811b65f5da8.jpg" 
-            alt="Travel Agent Course"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-            Онлайн турагент 2.0
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Профессиональный курс для тех, кто хочет построить успешную карьеру в туризме
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <a href="#registration">Начать обучение</a>
+      <section className="pt-32 pb-20 px-4 bg-background relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
+              Старт потока: 15 января 2025
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
+              Профессия<br/>Онлайн-Турагент
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
+              Курс выстроен с нуля и не требует опыта в туризме. Работайте из любой точки мира и получайте доход от продажи путешествий
+            </p>
+            <Button size="lg" className="text-lg px-8 py-6 h-auto" asChild>
+              <a href="#registration">Хочу стать турагентом</a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="#program">Узнать больше</a>
-            </Button>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+            <div className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <Icon name="MonitorPlay" size={40} className="text-primary mx-auto mb-3" />
+              <p className="font-semibold text-sm">Онлайн формат</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <Icon name="Briefcase" size={40} className="text-primary mx-auto mb-3" />
+              <p className="font-semibold text-sm">Работа во время обучения</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <Icon name="TrendingUp" size={40} className="text-primary mx-auto mb-3" />
+              <p className="font-semibold text-sm">Результаты учеников</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <Icon name="Award" size={40} className="text-primary mx-auto mb-3" />
+              <p className="font-semibold text-sm">Сертификат по окончании</p>
+            </div>
           </div>
         </div>
       </section>
@@ -170,92 +181,165 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="teachers" className="py-20 px-4">
+      <section id="pricing" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12">Наши преподаватели</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Тарифы обучения</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Выберите подходящий формат обучения</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-xl transition-all border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Базовый</CardTitle>
+                <CardDescription>Самостоятельное обучение</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-foreground">39 900 ₽</span>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Доступ к видеолекциям на 6 месяцев</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Все учебные материалы</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Практические задания</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Сертификат об окончании</span>
+                  </li>
+                </ul>
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <a href="#registration">Выбрать тариф</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all border-2 border-primary relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Популярный
+              </div>
+              <CardHeader>
+                <CardTitle className="text-2xl">Стандарт</CardTitle>
+                <CardDescription>С поддержкой наставника</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-foreground">59 900 ₽</span>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Всё из тарифа "Базовый"</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Еженедельные групповые вебинары</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Проверка домашних заданий</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Чат с кураторами</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Помощь в трудоустройстве</span>
+                  </li>
+                </ul>
+                <Button className="w-full mt-6" asChild>
+                  <a href="#registration">Выбрать тариф</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Premium</CardTitle>
+                <CardDescription>Индивидуальное сопровождение</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-foreground">89 900 ₽</span>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Всё из тарифа "Стандарт"</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Личный наставник на весь курс</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">4 индивидуальные консультации</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Помощь в создании портфолио</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Доступ к закрытому клубу выпускников</span>
+                  </li>
+                </ul>
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <a href="#registration">Выбрать тариф</a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="success" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Успехи наших учеников</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Реальные истории выпускников курса</p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Елена Соколова',
-                role: 'Основатель школы',
-                experience: '15 лет в туризме',
-                description: 'Эксперт в области международного туризма, автор образовательных программ'
-              },
-              {
-                name: 'Дмитрий Волков',
-                role: 'Руководитель практики',
-                experience: '12 лет в туризме',
-                description: 'Специалист по системам бронирования и организации туров'
-              },
-              {
-                name: 'Анна Петрова',
-                role: 'Маркетолог',
-                experience: '8 лет в digital',
-                description: 'Эксперт по продвижению туристических услуг в интернете'
-              }
-            ].map((teacher, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="w-32 h-32 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Icon name="User" size={64} className="text-primary" />
-                  </div>
-                  <CardTitle>{teacher.name}</CardTitle>
-                  <CardDescription>{teacher.role}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm font-semibold text-primary mb-2">{teacher.experience}</p>
-                  <p className="text-sm text-muted-foreground">{teacher.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="py-20 px-4 bg-muted/50">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12">Отзывы студентов</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
                 name: 'Мария Иванова',
-                text: 'Курс полностью изменил мою жизнь! Через 2 месяца после окончания я уже работаю турагентом и получаю стабильный доход.',
-                rating: 5
+                result: 'Доход 180 000 ₽/мес',
+                text: 'Через 2 месяца после окончания курса я открыла свое турагентство. Сейчас работаю удаленно и получаю стабильный доход.',
+                image: 'https://cdn.poehali.dev/projects/fd0eecdc-80c1-48b8-8635-d505979a453e/files/b226bce5-a44c-4fe6-91f2-21e667e1e0b3.jpg'
               },
               {
                 name: 'Александр Смирнов',
-                text: 'Отличная программа, квалифицированные преподаватели. Особенно понравилась практическая часть с реальными кейсами.',
-                rating: 5
+                result: '15+ туров за 3 месяца',
+                text: 'Курс дал мне все необходимые знания. Уже на обучении продал первые туры и получил комиссию.',
+                image: 'https://cdn.poehali.dev/projects/fd0eecdc-80c1-48b8-8635-d505979a453e/files/b226bce5-a44c-4fe6-91f2-21e667e1e0b3.jpg'
               },
               {
                 name: 'Ольга Козлова',
-                text: 'Я давно мечтала работать в туризме. Этот курс дал мне все необходимые знания и уверенность для старта карьеры.',
-                rating: 5
-              },
-              {
-                name: 'Игорь Морозов',
-                text: 'Удобный формат обучения, можно совмещать с работой. Материалы структурированы, поддержка на высшем уровне.',
-                rating: 5
+                result: 'Работа в TopTravel',
+                text: 'Благодаря курсу устроилась в крупное турагентство. Школа помогла с трудоустройством и подготовкой к собеседованию.',
+                image: 'https://cdn.poehali.dev/projects/fd0eecdc-80c1-48b8-8635-d505979a453e/files/b226bce5-a44c-4fe6-91f2-21e667e1e0b3.jpg'
               }
-            ].map((review, index) => (
-              <Card key={index}>
+            ].map((success, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-video relative overflow-hidden bg-muted">
+                  <img 
+                    src={success.image} 
+                    alt={success.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <Icon name="User" size={24} className="text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{review.name}</CardTitle>
-                      <div className="flex gap-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Icon key={i} name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
-                        ))}
-                      </div>
-                    </div>
+                  <CardTitle className="text-xl">{success.name}</CardTitle>
+                  <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                    {success.result}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{review.text}</p>
+                  <p className="text-muted-foreground">{success.text}</p>
                 </CardContent>
               </Card>
             ))}
@@ -263,7 +347,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="faq" className="py-20 px-4">
+      <section id="faq" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-4xl font-bold text-center mb-12">Часто задаваемые вопросы</h2>
           <Accordion type="single" collapsible className="w-full">
@@ -301,38 +385,30 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="registration" className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/10">
+      <section id="registration" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-bold text-center mb-4">Записаться на курс</h2>
-          <p className="text-center text-muted-foreground mb-8">
-            Заполните форму, и мы свяжемся с вами для обсуждения деталей
-          </p>
-          <Card>
-            <CardContent className="pt-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Начните карьеру в туризме</h2>
+            <p className="text-lg text-muted-foreground">
+              Оставьте заявку, и мы расскажем подробнее о курсе
+            </p>
+          </div>
+          <Card className="shadow-xl">
+            <CardContent className="pt-8 pb-8">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Ваше имя *</Label>
+                  <Label htmlFor="name" className="text-base">Ваше имя *</Label>
                   <Input
                     id="name"
                     placeholder="Иван Иванов"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="h-12"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="ivan@example.com"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Телефон *</Label>
+                  <Label htmlFor="phone" className="text-base">Телефон *</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -340,21 +416,37 @@ const Index = () => {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="h-12"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Комментарий</Label>
+                  <Label htmlFor="email" className="text-base">Email *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="ivan@example.com"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="h-12"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-base">Комментарий</Label>
                   <Textarea
                     id="message"
-                    placeholder="Расскажите о себе и своих целях..."
-                    rows={4}
+                    placeholder="Расскажите о своих целях в туризме..."
+                    rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full">
-                  Отправить заявку
+                <Button type="submit" size="lg" className="w-full h-14 text-lg">
+                  Хочу стать турагентом
                 </Button>
+                <p className="text-xs text-center text-muted-foreground">
+                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
               </form>
             </CardContent>
           </Card>
